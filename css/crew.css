@@ -1,0 +1,239 @@
+@import 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;400;600;700&family=Playfair+Display:wght@200;400;500;700&family=Roboto:wght@100;300;400;500&display=swap';
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+nav {
+  margin: 2em 0em 2em 2em;
+  background: transparent;
+}
+nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav > div > div img {
+  user-select: none;
+}
+nav > div .line-center {
+  flex-grow: 0.9;
+  height: 6.5px;
+  border-radius: 3px;
+  background-color: #21232e;
+  position: sticky;
+  left: 170px;
+}
+nav > div .navigation {
+  padding: 0 100px;
+  background: rgba(107, 96, 96, 0.15);
+  border-radius: 3px;
+  display: flex;
+  gap: 2em;
+}
+nav > div .navigation a {
+  font-family: "Barlow Condensed", sans-serif;
+  padding: 25px 0;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+nav > div .navigation a span {
+  margin: 0 7px;
+  font-weight: 1000;
+  color: #fff;
+  font-size: 18px;
+}
+nav > div .navigation a.active {
+  border-bottom: 3px solid #fff;
+}
+nav > div .icon-bar {
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  nav {
+    margin: 0 0 0 1rem;
+  }
+  nav > div > div {
+    margin: 0;
+  }
+  nav > div .line-center {
+    display: none;
+  }
+  nav > div .navigation {
+    padding: 0 50px;
+    gap: 2.5em;
+  }
+  nav > div .navigation a {
+    padding: 35px 0;
+    font-size: 17px;
+  }
+  nav > div .navigation a span {
+    display: none;
+  }
+}
+@media (max-width: 425px) {
+  nav {
+    margin: 2rem;
+  }
+  nav > div .navigation {
+    transform: translateY(-100%);
+    background: #121527;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 2rem 0;
+    width: 100%;
+    transition: 1.5s all ease;
+  }
+  nav > div .navigation.active {
+    transform: translateY(0);
+  }
+  nav > div .navigation a {
+    padding: 0;
+  }
+  nav > div .navigation a.active {
+    border-bottom: none;
+  }
+  nav > div .icon-bar {
+    position: inherit;
+    opacity: 1;
+  }
+}
+
+body {
+  height: 100%;
+  background-image: url("/assets/crew/background-crew-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  body {
+    background-image: url("/assets/crew/background-crew-tablet.jpg");
+  }
+}
+@media (max-width: 425px) {
+  body {
+    background-image: url("/assets/crew/background-crew-mobile.jpg");
+  }
+}
+
+main {
+  margin: 0 100px;
+}
+main h2 {
+  display: block;
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+main h2 span {
+  color: #9a9da8;
+}
+main > div {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+}
+main > div > div h3 {
+  color: #7f8297;
+  font-weight: 300;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+}
+main > div > div h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-weight: 200;
+  margin-bottom: 1.3rem;
+}
+main > div > div p {
+  color: #9a9da8;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 7rem;
+}
+main > div > div ul {
+  display: flex;
+  gap: 2rem;
+}
+main > div > div ul li {
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: rgba(73, 67, 67, 0.575);
+  transition: 0.5s all ease;
+}
+main > div > div ul li.active {
+  background-color: #fff;
+}
+@media (max-width: 768px) {
+  main {
+    margin: 0 2rem;
+  }
+  main h2 {
+    font-size: 1.5rem;
+  }
+  main > div {
+    justify-items: center;
+    text-align: center;
+    padding: 0 3rem;
+  }
+  main > div > div {
+    grid-column: 1/3;
+  }
+  main > div > div h3 {
+    font-size: 1.7rem;
+  }
+  main > div > div h1 {
+    font-size: 4rem;
+  }
+  main > div > div p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  main > div > div ul {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 425px) {
+  main > div {
+    grid-column-start: 1;
+    padding: 0;
+  }
+  main > div > div h3 {
+    font-size: 1.5rem;
+  }
+  main > div > div h1 {
+    font-size: 2.3rem;
+  }
+  main > div > div p {
+    font-size: 0.9rem;
+  }
+  main > div .img {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    margin-bottom: 2.5rem;
+  }
+  main > div .img img {
+    width: 330px;
+    object-fit: cover;
+  }
+}
+
+/*# sourceMappingURL=crew.css.map */

@@ -1,0 +1,25 @@
+@import 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;400;600;700&family=Playfair+Display:wght@200;400;500;700&family=Roboto:wght@100;300;400;500&display=swap';
+$blueSoft: #7f8297;
+$fontTimes: 'Playfair Display', serif;
+$helvetica: 'Barlow Condensed', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$white: #fff;
+$softWhite: #9a9da8;
+$breakTablet: 768px;
+$breakMovile: 425px;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none ;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+@mixin transition($duration, $easing) {
+    transition: $duration all $easing;
+}
+
+

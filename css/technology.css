@@ -1,0 +1,249 @@
+@import 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;400;600;700&family=Playfair+Display:wght@200;400;500;700&family=Roboto:wght@100;300;400;500&display=swap';
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+nav {
+  margin: 2em 0em 2em 2em;
+  background: transparent;
+}
+nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav > div > div img {
+  user-select: none;
+}
+nav > div .line-center {
+  flex-grow: 0.9;
+  height: 6.5px;
+  border-radius: 3px;
+  background-color: #21232e;
+  position: sticky;
+  left: 170px;
+}
+nav > div .navigation {
+  padding: 0 100px;
+  background: rgba(107, 96, 96, 0.15);
+  border-radius: 3px;
+  display: flex;
+  gap: 2em;
+}
+nav > div .navigation a {
+  font-family: "Barlow Condensed", sans-serif;
+  padding: 25px 0;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+nav > div .navigation a span {
+  margin: 0 7px;
+  font-weight: 1000;
+  color: #fff;
+  font-size: 18px;
+}
+nav > div .navigation a.active {
+  border-bottom: 3px solid #fff;
+}
+nav > div .icon-bar {
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  nav {
+    margin: 0 0 0 1rem;
+  }
+  nav > div > div {
+    margin: 0;
+  }
+  nav > div .line-center {
+    display: none;
+  }
+  nav > div .navigation {
+    padding: 0 50px;
+    gap: 2.5em;
+  }
+  nav > div .navigation a {
+    padding: 35px 0;
+    font-size: 17px;
+  }
+  nav > div .navigation a span {
+    display: none;
+  }
+}
+@media (max-width: 425px) {
+  nav {
+    margin: 2rem;
+  }
+  nav > div .navigation {
+    transform: translateY(-100%);
+    background: #121527;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 2rem 0;
+    width: 100%;
+    transition: 1.5s all ease;
+  }
+  nav > div .navigation.active {
+    transform: translateY(0);
+  }
+  nav > div .navigation a {
+    padding: 0;
+  }
+  nav > div .navigation a.active {
+    border-bottom: none;
+  }
+  nav > div .icon-bar {
+    position: inherit;
+    opacity: 1;
+  }
+}
+
+body {
+  height: 100%;
+  background-image: url("/assets/technology/background-technology-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  body {
+    background-image: url(/assets/technology/background-technology-tablet.jpg);
+  }
+}
+@media (max-width: 425px) {
+  body {
+    background-image: url(/assets/technology/background-technology-mobile.jpg);
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 10% 10% 40% 40%;
+  grid-template-rows: 8% auto;
+  align-items: center;
+}
+main .container-first {
+  grid-column: 2/5;
+}
+main .container-first h2 {
+  margin: 0 0 2.5rem 0;
+  font-size: 30px;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.3rem;
+  font-weight: 500;
+  color: #fff;
+}
+main .container-first h2 span {
+  color: #9a9da8;
+  margin: 0 10px 0 0;
+}
+main .circles {
+  grid-column: 2/3;
+}
+main .circles > div {
+  cursor: pointer;
+  margin: 1.7rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 2px solid #7f8297;
+  background: transparent;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: 0.5s all ease;
+}
+main .circles > div.active {
+  background-color: #fff;
+  border: none;
+  color: #000;
+}
+main .text {
+  grid-column: 3/4;
+}
+main .text h4 {
+  color: #9a9da8;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+}
+main .text h1 {
+  font-size: 3.6rem;
+  font-family: "Playfair Display", serif;
+  color: #fff;
+  font-weight: 100;
+  margin-bottom: 2rem;
+}
+main .text p {
+  color: #7f8297;
+  font-family: "Roboto", sans-serif;
+  line-height: 2rem;
+  font-size: 0.95rem;
+}
+main .img {
+  justify-self: end;
+}
+main .img img {
+  width: auto;
+  height: 420px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  main .container-first {
+    grid-column: 1/5;
+  }
+  main .container-first h2 {
+    margin: 0 2rem;
+    font-size: 1.5rem;
+  }
+  main .img {
+    justify-self: inherit;
+    grid-row: 2/3;
+    grid-column: 1/5;
+  }
+  main .img img {
+    width: 100%;
+    object-fit: cover;
+  }
+  main .circles {
+    grid-column: 1/5;
+    grid-row: 3/4;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+  }
+  main .text {
+    grid-column: 1/5;
+    text-align: center;
+    margin-bottom: 7rem;
+    padding: 0 4rem;
+  }
+  main .text p {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 425px) {
+  main .text {
+    padding: 0 2rem;
+  }
+  main .text h1 {
+    font-size: 3rem;
+  }
+}
+
+/*# sourceMappingURL=technology.css.map */

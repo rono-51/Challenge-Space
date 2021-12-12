@@ -1,0 +1,105 @@
+@use 'global';
+
+nav{
+    margin: 2em 0em 2em 2em;
+    background: transparent;
+    > div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > div{
+            img{
+                user-select: none;
+            }
+        }
+        .line-center{
+            flex-grow: 0.9;
+            height: 6.5px;
+            border-radius: 3px;
+            background-color: #21232e;
+            position: sticky;
+            left: 170px;
+        }
+        .navigation{
+            padding: 0 100px;
+            background: rgba(107, 96, 96, 0.15);
+            border-radius: 3px;
+            display: flex;
+            gap: 2em;
+            a{
+                font-family: global.$helvetica;
+                span{
+                    margin: 0 7px;
+                    font-weight: 1000;
+                    color: #fff;
+                    font-size: 18px;
+                }
+                padding: 25px 0;
+                color: #fff;
+                font-size: 20px;
+                letter-spacing: 2px;
+                &.active{
+                    border-bottom: 3px solid #fff;
+                }
+            }
+        }
+        .icon-bar{
+            position: absolute;
+            z-index: 100;       
+            opacity: 0;    
+        }
+    }
+    @media (max-width: global.$breakTablet){
+        margin: 0 0 0 1rem;
+        > div {
+            > div{
+                margin: 0 ;
+            }
+            .line-center{
+                display: none;
+            }
+            .navigation{
+                padding:0 50px;
+                gap: 2.5em;
+                a{
+                    padding: 35px 0;
+                    font-size: 17px;
+                    span{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: global.$breakMovile){
+        margin: 2rem;
+        > div{
+            .navigation{
+                transform: translateY(-100%); 
+                background: #121527;
+                position: absolute;
+                top: 0rem;
+                right: 0rem;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                padding: 2rem 0; 
+                width: 100%;
+                @include global.transition(1.5s, ease);
+                &.active{
+                    transform: translateY(0);
+                }
+                a{
+                    padding: 0;
+                    &.active{
+                        border-bottom: none;    
+                    }
+                }
+            }
+            .icon-bar{
+                position: inherit;
+                opacity: 1;
+            }
+        }
+    }
+}

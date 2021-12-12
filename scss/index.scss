@@ -1,0 +1,84 @@
+@use 'nav';
+@use 'global';
+
+body{
+    height: 100%;
+    background: {
+        image: url(/assets/home/background-home-desktop.jpg);
+        repeat: no-repeat;
+        size: cover;
+    }
+    @media (max-width : 768px){
+        background-image: url(/assets/home/background-home-tablet.jpg);
+    };
+    @media (max-width : global.$breakMovile){
+        background-image: url(/assets/home/background-home-mobile.jpg)
+    }
+}
+
+main{
+    display: flex;
+    align-items: flex-end;
+    margin: 8rem 0;
+    > div{
+        margin: 0 170px;    
+        color: #fff;
+        h2{
+            font-size: 1.8rem;
+            color: global.$blueSoft;
+            font-family:global.$helvetica;
+            font-weight:600;
+        }
+        h1{
+            margin: 0 0 1.5rem;
+            color: #fff;
+            font-size: 120px;
+            letter-spacing: 8px;
+            font-family: global.$fontTimes;
+            font-weight: lighter;
+        }
+        p{
+            font-size: 1.2rem;
+            color: global.$blueSoft;  
+            line-height: 1.5rem;
+            font-family: global.$helvetica;
+            letter-spacing: 1px;
+        }
+    }
+    > div > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size:40px;
+        margin: 0 20px;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: #fff;
+        color: #000;
+        font-family: global.$fontTimes;
+        font-weight:300;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    @media (max-width: global.$breakTablet){
+        margin: 8rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7rem;
+        > div{
+            text-align: center;
+        }
+    }
+    @media (max-width: global.$breakMovile){
+        > div{
+            margin: 0 1.5rem;
+            h2{
+                font-size: 1.4rem;
+            }
+            h1{
+                font-size: 5rem;
+            }
+        }
+    }
+}
